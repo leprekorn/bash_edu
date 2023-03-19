@@ -4,3 +4,7 @@
 # User can chose copy or move files
 # By default, files are copy
 
+#!/bin/bash
+
+
+find $(pwd) -type f -name *.txt 
