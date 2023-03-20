@@ -6,5 +6,5 @@
 
 #!/bin/bash
 
-
-find $(pwd) -type f -name *.txt 
+src="$PWD"
+find "$src" -type f -name "*.txt" | xargs -t -I % cp % ~
