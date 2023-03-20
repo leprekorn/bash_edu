@@ -7,4 +7,13 @@
 #!/bin/bash
 
 src="$PWD"
-find "$src" -type f -name "*.txt" | xargs -t -I % cp % ~
+if [ $# -eq 0 ]
+  then
+    echo "action copy"
+    command="cp"
+  else
+    echo "action mv"
+    command="mv"
+fi
+
+find "$src" -maxdepth 1 -type f -name "*.txt"  | xargs -t -I % "$command" % ~
